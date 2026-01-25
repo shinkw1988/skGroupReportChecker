@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="グループ（班）の集合状況を迅速にチェック・管理するスマートフォン向けWebアプリ">
+  <meta name="theme-color" content="#4FC3F7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>グループ報告チェッカー</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- チェック画面 -->
+    <div id="checkScreen" class="check-screen">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="header-content">
+          <h1>skグループ報告チェッカー</h1>
+          <button class="btn-clear" id="btnClearAll">選択解除</button>
+        </div>
+      </header>
+
+      <!-- メインコンテンツ -->
+      <main class="main-content">
+        <div class="group-list" id="groupList">
+          <!-- グループアイテムはJavaScriptで動的生成 -->
+        </div>
+      </main>
+
+      <!-- フッター -->
+      <footer class="footer">
+        <button class="btn-settings" id="btnSettings">設定</button>
+      </footer>
+    </div>
+
+    <!-- 設定画面 -->
+    <div id="settingsScreen" class="settings-screen">
+      <!-- ヘッダー -->
+      <header class="header">
+        <div class="header-content">
+          <h1>設定</h1>
+        </div>
+      </header>
+
+      <!-- 設定コンテンツ -->
+      <main class="settings-content">
+        <!-- 班タイプ選択 -->
+        <section class="settings-section">
+          <h2>班のタイプ</h2>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="typeNumber" name="groupType" value="number" checked>
+              <label for="typeNumber">1班タイプ（1班、2班、3班...）</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="typeAlphabet" name="groupType" value="alphabet">
+              <label for="typeAlphabet">A班タイプ（A班、B班、C班...）</label>
+            </div>
+          </div>
+        </section>
+
+        <!-- 班の数設定 -->
+        <section class="settings-section">
+          <h2>班の数</h2>
+          <div class="number-input-group">
+            <label for="groupCount">班の数を入力してください（1〜30）</label>
+            <input type="number" id="groupCount" min="1" max="30" value="12" inputmode="numeric" pattern="[0-9]*">
+            <div class="warning-message" id="warningMessage">
+              最大は30までです。
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- フッター -->
+      <footer class="footer">
+        <button class="btn-back" id="btnBack">戻る</button>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>
