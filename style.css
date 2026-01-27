@@ -153,7 +153,7 @@ body::before {
   padding: var(--spacing-sm) var(--spacing-md);
   box-shadow: var(--shadow);
   display: grid;
-  grid-template-columns: auto 0.6fr 40px 1.8fr;
+  grid-template-columns: 32px 0.6fr auto 1.8fr;
   gap: var(--spacing-md);
   align-items: center;
   transition: var(--transition);
@@ -199,8 +199,8 @@ body::before {
 
 /* チェックボタン */
 .btn-check {
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 3px solid var(--primary-color);
   background: white;
@@ -216,8 +216,8 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--success-color);
   transition: var(--transition);
@@ -495,10 +495,7 @@ body::before {
     font-size: 12px;
   }
 
-  .btn-check {
-    width: 44px;
-    height: 44px;
-  }
+  /* スマホ用個別サイズを削除：基本設定に従うようにします */
 }
 
 /* タッチデバイス用の調整 */
