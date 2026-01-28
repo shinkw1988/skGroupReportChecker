@@ -276,7 +276,7 @@ class AppUI {
 
     // 順番表示
     const orderNumber = document.createElement('div');
-    orderNumber.className = 'order-number';
+    orderNumber.className = `order-number ${check.order === 1 ? 'first' : ''}`;
     orderNumber.textContent = check.order || '';
 
     // 班名
@@ -297,7 +297,7 @@ class AppUI {
     const noteInput = document.createElement('input');
     noteInput.type = 'text';
     noteInput.className = 'note-input';
-    noteInput.placeholder = '人数など';
+    noteInput.placeholder = '人数、班長名など';
     noteInput.value = check.note || '';
     noteInput.addEventListener('input', (e) => {
       this.state.updateNote(groupId, e.target.value);
