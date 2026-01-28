@@ -1,0 +1,17 @@
+{
+    "name": "グループ報告チェッカー",
+    "short_name": "報告チェッカー",
+    "description": "グループの集合状況をオフラインでもチェック・管理できるアプリ",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#B3E5FC",
+    "theme_color": "#4FC3F7",
+    "icons": [
+        {
+            "src": "./favicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
