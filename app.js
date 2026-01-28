@@ -68,12 +68,12 @@ class AppState {
       const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       let name = '';
       let num = index - 1;
-      
+
       while (num >= 0) {
         name = alphabet[num % 26] + name;
         num = Math.floor(num / 26) - 1;
       }
-      
+
       return `${name}班`;
     }
   }
@@ -86,14 +86,14 @@ class AppState {
       check.checked = false;
       const oldOrder = check.order;
       check.order = null;
-      
+
       // 他のチェック済みアイテムの順序を調整
       Object.keys(this.checks).forEach(id => {
         if (this.checks[id].order && this.checks[id].order > oldOrder) {
           this.checks[id].order--;
         }
       });
-      
+
       this.checkOrder--;
     } else {
       // チェック
@@ -101,7 +101,7 @@ class AppState {
       this.checkOrder++;
       check.order = this.checkOrder;
     }
-    
+
     this.save();
   }
 
@@ -186,9 +186,11 @@ class AppUI {
       typeNumber: document.getElementById('typeNumber'),
       typeAlphabet: document.getElementById('typeAlphabet'),
       groupCount: document.getElementById('groupCount'),
+      btnMinus: document.getElementById('btnMinus'),
+      btnPlus: document.getElementById('btnPlus'),
       warningMessage: document.getElementById('warningMessage')
     };
-    
+
     this.initEventListeners();
     this.renderGroupList();
   }
@@ -229,6 +231,28 @@ class AppUI {
         e.target.value = 30;
       } else {
         this.hideWarning();
+      }
+    });
+
+    // マイナスボタン
+    this.elements.btnMinus.addEventListener('click', () => {
+      let value = parseInt(this.elements.groupCount.value);
+      if (value > 1) {
+        value--;
+        this.elements.groupCount.value = value;
+        this.hideWarning();
+      }
+    });
+
+    // プラスボタン
+    this.elements.btnPlus.addEventListener('click', () => {
+      let value = parseInt(this.elements.groupCount.value);
+      if (value < 30) {
+        value++;
+        this.elements.groupCount.value = value;
+        this.hideWarning();
+      } else {
+        this.showWarning();
       }
     });
   }
@@ -298,7 +322,7 @@ class AppUI {
   showSettings() {
     this.elements.checkScreen.classList.add('hidden');
     this.elements.settingsScreen.classList.add('active');
-    
+
     // 現在の設定を反映
     if (this.state.groupType === 'number') {
       this.elements.typeNumber.checked = true;

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/skGroupReportChecker/',
+    base: './',
     build: {
         outDir: 'dist',
     },
