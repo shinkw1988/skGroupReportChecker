@@ -38,7 +38,7 @@
 
       <!-- フッター -->
       <footer class="footer">
-        <div class="copyright">© <span class="owner-name">ShinKw1988</span></div>
+        <div class="copyright"><span class="copyright-symbol">©</span> <span class="owner-name">ShinKw1988</span></div>
         <button class="btn-settings" id="btnSettings">設定</button>
       </footer>
     </div>
@@ -71,9 +71,9 @@
 
         <!-- 班の数設定 -->
         <section class="settings-section">
-          <h2>班の数</h2>
+          <h2>班の数 <span class="h2-sub-text">（1〜30）</span></h2>
           <div class="number-input-group">
-            <label for="groupCount">班の数を入力してください（1〜30）</label>
+            <label for="groupCount" class="visually-hidden">班の数を入力してください</label>
             <div class="spin-input-wrapper">
               <button type="button" class="btn-spin" id="btnMinus" aria-label="減らす">−</button>
               <input type="number" id="groupCount" min="1" max="30" value="12" inputmode="numeric" pattern="[0-9]*"
@@ -93,7 +93,7 @@
 
       <!-- フッター -->
       <footer class="footer">
-        <div class="copyright">© <span class="owner-name">Shin Kawakami</span></div>
+        <div class="copyright"><span class="copyright-symbol">©</span> <span class="owner-name">ShinKw1988</span></div>
         <button class="btn-back" id="btnBack">戻る</button>
       </footer>
     </div>
